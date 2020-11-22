@@ -53,7 +53,7 @@ function App() {
 
   let sessionAuth = false
   
-  if (sessionStorage.getItem("auth")) {
+  if (sessionStorage.getItem("auth") == true) {
     sessionAuth = true
   }
 
