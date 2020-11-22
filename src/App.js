@@ -52,8 +52,7 @@ function App() {
   document.title = "Login"
 
   let sessionAuth = false
-  
-  if (sessionStorage.getItem("auth") == true) {
+  if (sessionStorage.getItem("auth") == 'true') {
     sessionAuth = true
   }
 
