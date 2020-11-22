@@ -6,8 +6,8 @@ const userDetail = () => {
     "id": 1,
     "name": "Leanne Graham",
     "username": "Bret",
-    "email": "Sincere@april.biz",
-    "pass": "Pa$$w0rd!",
+    "email": "admin@test.com",
+    "pass": "123456",
     "address": {
       "street": "Kulas Light",
       "suite": "Apt. 556",
@@ -33,28 +33,48 @@ const userDetail = () => {
 const login = (e, email, pass) => {
   e.preventDefault();
   
+  let auth = false;
   if (
     userDetail().email === email &&
     userDetail().pass === pass
   ) {
-    // console.log('Valid');
-    // console.log(email, pass);
-    return true
-  } else {
-    // console.log('Invalid');
-    return false
+    document.title = "Home"
+
+    auth = true
   }
+
+  sessionStorage.setItem("auth", auth);
+  return auth
 }
 
 
 function App() {
+  document.title = "Login"
+
+  let sessionAuth = false
+  
+  if (sessionStorage.getItem("auth")) {
+    sessionAuth = true
+  }
+
+  const [auth, setAuth] = useState(sessionAuth)
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
-  const [auth, setAuth] = useState(false)
   
   if (auth) {
     return (
-      <h4>Successfully Login</h4>
+      <>
+        <h4>Successfully Login</h4>
+        <button 
+          className="btn btn-primary btn-sm"
+          onClick={ () => {
+            sessionStorage.removeItem('auth')
+            setAuth(false)
+          } }
+        >
+          Logout
+        </button>
+      </>
     )
   } else {
     return (
