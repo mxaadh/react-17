@@ -3,16 +3,7 @@ body {
     height: 100%;
     text-align: center!important;
 }
-
-body {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #f5f5f5;
-}
+ 
 
 .form-signin {
     width: 100%;
@@ -49,13 +40,7 @@ body {
     border-top-right-radius: 0;
 }
 
-#root {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-}
-
+ 
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -70,3 +55,4 @@ body {
         font-size: 3.5rem;
     }
 }
+
